@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cristian_Berrezueta_Examen.RegistroPage"
+             Title="Registro">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10">
+            <Label x:Name="lblUsuarioConectado" HorizontalOptions="End"/>
+
+            <Label Text="REGISTRO" FontSize="18" HorizontalOptions="Center" Margin="0,10,0,20"/>
+
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*, *" RowSpacing="10" ColumnSpacing="10">
+                <Label Grid.Row="0" Grid.Column="0" Text="FECHA" VerticalOptions="Center"/>
+                <DatePicker Grid.Row="0" Grid.Column="1" x:Name="dpFecha"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Text="PAÍS" VerticalOptions="Center"/>
+                <Picker Grid.Row="1" Grid.Column="1" x:Name="pkPais" Title="PAISES">
+                    <Picker.Items>
+                        <x:String>Ecuador</x:String>
+                        <x:String>Perú</x:String>
+                        <x:String>Colombia</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Label Grid.Row="2" Grid.Column="0" Text="CIUDAD" VerticalOptions="Center"/>
+                <Picker Grid.Row="2" Grid.Column="1" x:Name="pkCiudad" Title="CIUDADES">
+                    <Picker.Items>
+                        <x:String>Loja</x:String>
+                        <x:String>Quito</x:String>
+                        <x:String>Cuenca</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Label Grid.Row="3" Grid.Column="0" Text="Monto Inicial" VerticalOptions="Center"/>
+                <Entry Grid.Row="3" Grid.Column="1" x:Name="txtMontoInicial" Keyboard="Numeric" Placeholder="INGRESE EL MONTO INICIAL"/>
+
+                <Button Grid.Row="4" Grid.Column="0" Text="Calcular Pago mensual" Clicked="btnCalcular_Clicked"/>
+                <Entry Grid.Row="4" Grid.Column="1" x:Name="txtPagoMensual" IsEnabled="False" VerticalOptions="Center"/>
+            </Grid>
+
+            <BoxView HeightRequest="1" Color="Gray" Margin="0,10,0,10"/>
+
+            <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *, *" ColumnSpacing="5">
+                <Label Grid.Row="0" Grid.Column="0" Text="NOMBRE"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="APELLIDO"/>
+                <Label Grid.Row="0" Grid.Column="2" Text="EDAD"/>
+
+                <Entry Grid.Row="1" Grid.Column="0" x:Name="txtNombre" Placeholder="NOMBRE"/>
+                <Entry Grid.Row="1" Grid.Column="1" x:Name="txtApellido" Placeholder="APELLIDO"/>
+                <Entry Grid.Row="1" Grid.Column="2" x:Name="txtEdad" Keyboard="Numeric" Placeholder="Edad"/>
+            </Grid>
+
+            <Button Text="Ver resumen" Clicked="btnResumen_Clicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cristian_Berrezueta_Examen.LoginPage"
+             Title="Login">
+
+    <VerticalStackLayout Padding="30" Spacing="20">
+        <Label Text="INICIAR SESIÓN" TextColor="Red" FontSize="20" HorizontalOptions="Center"/>
+
+        <Image Source="dotnet_bot.png" HeightRequest="100"/>
+
+        <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, 2*" RowSpacing="15">
+            <Label Grid.Row="0" Grid.Column="0" Text="Usuario:" VerticalOptions="Center"/>
+            <Entry Grid.Row="0" Grid.Column="1" x:Name="txtUsuario" Placeholder="Ingrese usuario"/>
+
+            <Label Grid.Row="1" Grid.Column="0" Text="Contraseña:" VerticalOptions="Center"/>
+            <Entry Grid.Row="1" Grid.Column="1" x:Name="txtClave" IsPassword="True" Placeholder="Ingrese clave"/>
+        </Grid>
+
+        <Button Text="Iniciar sesión" Clicked="btnIniciar_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>
